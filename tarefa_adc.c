@@ -130,7 +130,7 @@ void init_pinos(){
 }
 void control_display(int top, int left, bool flag){
     ssd1306_fill(&ssd, false); //Apaga todos pixels
-    ssd1306_send_data(&ssd); // Atualiza o display
+  
   if (flag){
     //Borda grossa
     ssd1306_rect(&ssd, 1, 1, 126, 62, 1, 1); // Desenha um retângulo

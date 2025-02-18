@@ -24,7 +24,7 @@ Este projeto integra múltiplos componentes e funcionalidades utilizando a Raspb
   - **Interrupções:** Para o tratamento dos eventos dos botões.
 
 ## Vídeo Demonstração 
-- [Youtube](https://youtube.com/shorts/iSnlVVVcLfA)
+- [Youtube](https://youtube.com/shorts/vHorKfteJ9Y)
 
 ## Como executar o Projeto
 
