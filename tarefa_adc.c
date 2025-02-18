@@ -78,19 +78,15 @@ int main() {
 
 
   while (true) {
-    adc_select_input(1); // Seleciona o ADC para eixo X. O pino 26 como entrada analógica
+    adc_select_input(1); // Seleciona o ADC para eixo X. O pino 27 como entrada analógica
     adc_value_x = adc_read();
-    adc_select_input(0); // Seleciona o ADC para eixo Y. O pino 27 como entrada analógica
+    adc_select_input(0); // Seleciona o ADC para eixo Y. O pino 26 como entrada analógica
     adc_value_y = adc_read();    
     printf(" EIXO x: %d EIXO y: %d \n", adc_value_x, adc_value_y);
     control_led(adc_value_x, adc_value_y);
     top = (64 - 8) - (adc_value_y * 0.0137);
     left = adc_value_x * 0.0294;
     control_display(top, left,  edge_flag);
-    //printf(" LEFT: %d TOP: %d \n", left, top);
-
-    //sleep_ms(500);
-
   }
 }
 
@@ -148,7 +144,7 @@ void control_display(int top, int left, bool flag){
     ssd1306_send_data(&ssd); // Atualiza o display
  }
  void control_led(int adc_value_x, int adc_value_y){
-    uint8_t tolerancia = 50;
+    uint8_t tolerancia = 100;
     if (abs(adc_value_y - center_value) > tolerancia){
     level_red = abs(adc_value_y - center_value);}
     else{level_red = 0;}
